@@ -1,0 +1,199 @@
+td {
+   vertical-align: middle; /* align the content in the table fields */
+}
+
+td p { /* align the content in the table fields */
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+
+}
+
+#tt_popup { /* Css for the popup */ 
+margin: 0px;
+border: 5px solid red;
+}
+
+#map { /*Position the map div*/
+position:relative;
+width: 300px;
+height: 315px;
+
+/* map size: 1000 by 1000px */
+    /* resize: both;
+    overflow: auto; */
+}
+
+#text { /*Css for the text div above the map*/
+position:relative;
+left:5px;
+max-width:300px;
+border: 1px solid grey;
+font-size: 108%;
+}
+
+#btnpaneldiv { /*css for the panel button*/
+position: relative;
+top: 15px;
+}
+
+#panel_button {
+background-color: E9E9E9;
+}
+
+#mapimg { /*Css for the image of the map*/
+max-width: 100%;
+    height: auto;
+} 
+
+table, td, th { /*Padding table*/
+padding: 0px;
+}
+
+#loc_img { /* height and width of the location buttons*/
+position: relative;
+width: 30px;
+height: 38px;
+}
+
+#heilan_logo { /*The logo on top of the page*/
+width: 80px;
+height: auto;
+}
+
+#time_w { /*This is the image of a waiting person in the popup*/
+position: relative;
+width: 50px;
+height:auto;
+opacity: 0.5;
+}
+
+#Boat { /*This is for the images of the boats*/
+/* 300 px width each */
+position:relative;
+width: 100px;
+height: auto;
+text-align: center;
+}
+
+.center-wrapper{ /*The wrapper to center the content of the page*/
+text-align: center;
+}
+.center-wrapper * {
+margin: 0 auto;
+}
+
+.btn { /*Someting about the jquery buttons*/
+border: none !important; 
+opacity: 1 !important;
+}
+
+#img { /* stop image in panel */
+height: auto;
+width: 300px;
+}
+
+a:link {
+    text-decoration: none;
+  color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+a:active {
+    text-decoration: underline;
+    color: #000000;
+}
+
+/* below the css for the location buttons 
+Note escape strings are needed to use numbers as id in html5, so I did it with unicode, so #1 becomes #/31
+Edit: that works only on desktop. Now used letters instead of numbers
+*/
+
+#one  {
+position:absolute;
+left: 99px;     /*392 * 333, becomes 392/3-32 and 333/3-49 */
+top: 62px;
+width: auto;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background:url(Location.png) center center no-repeat;
+}
+
+#one span span {
+    height: 30px !important;  
+    line-height: 18px;
+}
+
+
+
+#two {
+position:absolute;
+left: 141px;   /* 515 * 305   */  
+top: 52px;
+width: auto;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background:url(Location.png) center center no-repeat;
+}
+
+#two span span {
+    height: 30px !important;  
+    line-height: 25px;
+}
+
+/* Position3: 185,143 */
+
+#three  {
+position:absolute;
+left: 199px;     /* 688 * 754 */
+top: 202px;
+width: auto;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background:url(Location.png) center center no-repeat;
+}
+
+#three  span span {
+    height: 30px !important;  
+    line-height: 18px;
+}
+
+
+#four {
+position:absolute;
+left: 139px;     /* 509 * 825 */
+top: 226px;
+width: auto;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background:url(Location.png) center center no-repeat;
+}
+
+#four span span {
+    height: 30px !important;  
+    line-height: 18px;
+}
+
+#five {
+position:absolute;
+left: 87px;     /* 354 * 817 */
+top: 223px;
+width: auto;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background:url(Location.png) center center no-repeat;
+}
+
+#five span span {
+    height: 30px !important;  
+    line-height: 18px;
+}

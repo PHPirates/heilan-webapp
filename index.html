@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Heilan</title>
+
+<link rel="shortcut icon" href="./favicon.ico" /> 
+<link rel="shortcut icon" href="favicon.gif" /> <!-- the favicon of the page. Unfortunately it is only a moving picture (the gif) when you view the website in firefox desktop -->
+
+<!-- setting the zoom properties -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="width=device-width, minimum-scale=0.001, maximum-scale=100" name="viewport">
+
+<!-- linking to jquerymobile -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+<script src="jquery.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+
+<link rel='stylesheet' type='text/css' href='indexstyle.css'/>
+
+
+<script type="text/javascript">
+
+$(document).on("ready", function () {
+    $(".btn").on("click", function () { //if a button with class btn is clicked
+      
+      $("#panel h2").html("Information about stop <b>" + this.id + "</b>."); //then set this html text to the panel header
+      //$("#panel p").html("Here should be information about stop " + this.id + "."); //then set this html text to the panel text
+$("#panel_button p").html("Information about stop " + this.id + "."); // and change the button text
+      localStorage.setItem('id', this.id);        //also add the last-clicked id to the local-storage
+      
+
+if(this.id == "one")                                  // if () else if () else ()      //without the {} !!!!
+$("#img").attr("src","/Pictures/stop_1.jpg"); 
+
+
+else if (this.id == "two")
+$("#img").attr("src","/Pictures/stop_2.jpg"); 
+
+else if (this.id == "three")
+$("#img").attr("src","/Pictures/stop_3.jpg"); 
+
+
+else if (this.id == "four")
+$("#img").attr("src","/Pictures/stop_4.jpg"); 
+
+else if (this.id == "five")
+$("#img").attr("src","/Pictures/stop_5.jpg"); 
+
+
+if(this.id == "one")
+$("#panel p").html("Venice");
+else if (this.id == "two")
+$("#panel p").html("Horse Culture Museum");
+else if (this.id == "three")
+$("#panel p").html("Peach Blossom Island");
+else if (this.id == "four")
+$("#panel p").html("Taoyuon Resort");
+else if (this.id == "five")
+$("#panel p").html("Horse Island Hotels");
+
+
+      
+    });
+
+//From my question: http://stackoverflow.com/questions/26828754/local-storage-the-simple-way?noredirect=1 
+ var selectedButtonId = localStorage.id;
+//simulate a button-click
+    $('#' + selectedButtonId).trigger('click');
+});
+
+/* Above replaces my first try:
+// if we have something on local storage
+var id = localStorage.getItem('id');
+if(id) {
+     $("#panel h2").html("Information about stop <b>" + this.id + "</b>."); //then set this html text to the panel header
+    $("#panel_button p").html("Information about stop " + id + "."); // and change the button text
+}
+*/
+
+//below are the 5 ajax functions for the popups. The five documents, stop_1.php, stop_2.php etc are identical except for the variable on top
+
+function loadindex1()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+//select the div to change by id
+    document.getElementById("tt_popup").innerHTML=xmlhttp.responseText;
+    }
+  }
+//select the file to show next
+xmlhttp.open("GET","stop_1.php",true);
+xmlhttp.send();
+}
+
+
+
+function loadindex2()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+//select the div to change by id
+    document.getElementById("tt_popup").innerHTML=xmlhttp.responseText;
+    }
+  }
+//select the file to show next
+xmlhttp.open("GET","stop_2.php",true);
+xmlhttp.send();
+}
+
+function loadindex3()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+//select the div to change by id
+    document.getElementById("tt_popup").innerHTML=xmlhttp.responseText;
+    }
+  }
+//select the file to show next
+xmlhttp.open("GET","stop_3.php",true);
+xmlhttp.send();
+}
+
+function loadindex4()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+//select the div to change by id
+    document.getElementById("tt_popup").innerHTML=xmlhttp.responseText;
+    }
+  }
+//select the file to show next
+xmlhttp.open("GET","stop_4.php",true);
+xmlhttp.send();
+}
+
+
+function loadindex5()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+//select the div to change by id
+    document.getElementById("tt_popup").innerHTML=xmlhttp.responseText;
+    }
+  }
+//select the file to show next
+xmlhttp.open("GET","stop_5.php",true);
+xmlhttp.send();
+}
+
+
+function loadlocation()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+//select the div to change by id
+    document.getElementById("tt_popup").innerHTML=xmlhttp.responseText;
+    }
+  }
+//select the file to show next
+xmlhttp.open("GET","location.html",true);
+xmlhttp.send();
+}
+
+</script>
+</head>
+<body>
+
+
+
+<div data-role="page" id="map-page">
+
+<div data-role="panel" id="panel"> 
+    <h2>Panel Header</h2>
+    <p>Below is info about the schedule today</p>
+<img src="/Pictures/map.png" id="img"></img>
+<!-- <a href="#tt_popup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" onclick=window.location.href='location.html'>I want to know where I am!</a> -->
+</div> <!-- /panel -->
+
+<div data-role="header">
+    <h1>Heilan Aquapark <br>
+<a href="http://heilan.com.cn/"> 
+&#28023;&#28572;&#38598;&#22242; <br>
+&#23041;&#23612;&#26031;&#27700;&#22478;
+</a>
+</h1>
+<h1><img src="Heilan Logo.jpg" id="heilan_logo" border="0"></h1>
+</div> <!-- /header -->
+
+  <div data-role="main" class="ui-content">
+   <div class="center-wrapper"> <!-- wraps the content of the page in the center -->
+
+<div id="text">
+Click your location for the next ferries.<br> 
+
+
+<!-- This is the popup div with a default text which gets replaced by the ajax functions -->
+    <div data-role="popup" id="tt_popup" >
+      <p>Have patience...</p>
+    </div> <!-- /popup -->
+
+
+     <div id="map">
+ <img id="mapimg" src="/Pictures/map.png" border="0" />
+
+ <!-- original map: http://gyazo.com/c449e934b290a29084dfea71074965a8.png -->
+
+<!-- these are the five location buttons. They are in the map div so they can be positioned relative to the map. -->
+<a href="#tt_popup" data-role="button" data-rel="popup" class="ui-btn  ui-corner-all btn" onclick="loadindex1()" id="one" data-transition="flip" > <img src="/Pictures/Location_original.png" alt="Problems?" id="loc_img" /> </a>
+<a href="#tt_popup" data-role="button" data-rel="popup" class="ui-btn  ui-corner-all btn" onclick="loadindex2()" id="two" data-transition="flip" > <img src="/Pictures/Location_original.png" alt="Problems?" id="loc_img" /> </a>
+<a href="#tt_popup" data-role="button" data-rel="popup" class="ui-btn  ui-corner-all btn" onclick="loadindex3()" id="three" data-transition="flip" > <img src="/Pictures/Location_original.png" alt="Problems?" id="loc_img" /> </a>
+<a href="#tt_popup" data-role="button" data-rel="popup" class="ui-btn  ui-corner-all btn" onclick="loadindex4()" id="four" data-transition="flip" > <img src="/Pictures/Location_original.png" alt="Problems?" id="loc_img" /> </a>
+<a href="#tt_popup" data-role="button" data-rel="popup" class="ui-btn  ui-corner-all btn" onclick="loadindex5()" id="five" data-transition="flip" > <img src="/Pictures/Location_original.png" alt="Problems?" id="loc_img" /> </a>
+
+
+ <!--to make a new stop: 
+ 1. copy button (above) (change the number TWO times)
+ 2. copy ajax function (change number TWO times)
+ 3. copy css position (indexstyle.css) (ONE time)
+ 4. copy stop_x.php 
+ 5. edit the variable in there
+ 6. Use inserting_times.php to insert new times
+ 
+ -->
+
+     </div> <!-- /map div --> 
+</div> <!-- text div -->
+
+<div id="btnpaneldiv"> <!-- just a seperate div for the panel button -->
+ <a href="#panel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow" id="panel_button" data-theme="a"> <p>Information about the schedule today.</p></a>
+ </div>
+<br>
+
+   </div> <!-- /center-wrapper -->
+  </div> <!-- /content -->
+
+<div data-role="footer">
+   <h1>&copy; 
+2014</h1>
+<?php
+print date("Y"); 
+?>
+ 
+ </div> <!-- /footer -->
+</div> <!-- /map-page -->
+
+</body>
+</html>

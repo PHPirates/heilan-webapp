@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="favicon.gif" />
+
+<!-- linking to jquerymobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+<script src="jquery.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<body>
+
+<!--*************************************************************This was a test page to get the location from a user. Not used in final website********************************************-->
+
+<div data-role="page">
+
+  <div data-role="header">
+    <h1>My First JavaScript</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <!-- 
+<p>Click Date to display current day, date, and time.</p>
+
+<button type="button" onclick="GetLocation()">Date</button>
+-->
+
+<a href="#tt_popup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" onclick=window.location.href='http://maps.google.com'>I want to know where I am!</a>
+
+<p id="lat"></p>
+<p id="long"></p>
+
+<script>
+navigator.geolocation.getCurrentPosition(GetLocation);
+
+function GetLocation(location) {
+document.getElementById("lat").innerHTML = "Lat: " + location.coords.latitude;
+document.getElementById("long").innerHTML = "Long: " + location.coords.longitude;
+}
+</script>
+
+  </div>
+
+ 
+
+</div>
+
+</body>
+</html> 
